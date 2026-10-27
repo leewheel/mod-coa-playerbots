@@ -17,6 +17,10 @@
 #include "Player.h"
 #include "SpellMgr.h"
 #include <algorithm>
+// boost::placeholders must be declared before boost's property_tree parser.hpp pulls it in
+// (boost 1.81 json_parser references boost::placeholders::_1 without including it itself).
+// By leewheel 2026年10月27日
+#include <boost/bind/placeholders.hpp>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <filesystem>
